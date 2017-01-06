@@ -9,6 +9,8 @@ public class BallMovement : MonoBehaviour {
     public float PlayerPadBounce;
     public float BouncePadBounce;
 
+    public float MaxSpeed = 100f;
+
     // Use this for initialization
     void Start ()
     {
@@ -16,8 +18,19 @@ public class BallMovement : MonoBehaviour {
         rb.velocity = Vector3.down * PlayerPadBounce;
 	}
 
+    private void OnGUI()
+    {
+        GUIStyle guistyle = new GUIStyle();
+        guistyle.fontSize = 20;
+        
+        GUILayout.Label(""+ rb.velocity.magnitude, guistyle);
+    }
 
-
+    private void FixedUpdate()
+    {
+        if (rb.velocity.magnitude > MaxSpeed)
+            rb.velocity = rb.velocity.normalized * MaxSpeed;
+    }
 
     float hitFactor(Vector2 ballPos, Vector2 PadPosition, float PadLength)
     {
