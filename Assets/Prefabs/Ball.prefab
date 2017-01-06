@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1997d5a5ea4816541ab344b0a018ce38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPadBounce: 30
-  BouncePadBounce: 60
+  PlayerPadBounce: 40
+  BouncePadBounce: 70
   MaxSpeed: 50
 --- !u!135 &135000013299285664
 SphereCollider:
