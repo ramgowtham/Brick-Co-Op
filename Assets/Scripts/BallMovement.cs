@@ -8,9 +8,17 @@ public class BallMovement : MonoBehaviour {
     
     public float PlayerPadBounce;
     public float BouncePadBounce;
+    public float BrickBounce;
+    public float NormalWallBounce;
 
     public float MaxSpeed = 100f;
 
+    public ParticleSystem hitParticle;
+
+    
+    
+    
+    
     // Use this for initialization
     void Start ()
     {
@@ -18,19 +26,31 @@ public class BallMovement : MonoBehaviour {
         rb.velocity = Vector3.down * PlayerPadBounce;
 	}
 
+
+
+
+
     private void OnGUI()
     {
         GUIStyle guistyle = new GUIStyle();
-        guistyle.fontSize = 20;
+        guistyle.fontSize = 30;
         
         GUILayout.Label(""+ rb.velocity.magnitude, guistyle);
     }
+
+
+
+
 
     private void FixedUpdate()
     {
         if (rb.velocity.magnitude > MaxSpeed)
             rb.velocity = rb.velocity.normalized * MaxSpeed;
     }
+
+
+
+
 
     float hitFactor(Vector2 ballPos, Vector2 PadPosition, float PadLength)
     {
@@ -48,11 +68,20 @@ public class BallMovement : MonoBehaviour {
 
         void OnCollisionEnter(Collision col)
     {
+
+
+
+        hitParticle.GetComponent<Renderer>().material = col.gameObject.GetComponent<Renderer>().material;
+        Instantiate(hitParticle, transform.position, Quaternion.identity);
+
         Debug.Log(LastTouchedObject);
 
-        if (col.gameObject.tag == "wall")
+
+
+
+        if (col.gameObject.tag == "BouncePad")
         {
-            LastTouchedObject = "wall";
+            LastTouchedObject = "BouncePad";
 
             float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
 
@@ -62,6 +91,40 @@ public class BallMovement : MonoBehaviour {
             // Set Velocity with dir * speed
             GetComponent<Rigidbody>().velocity = dir * BouncePadBounce;
         }
+
+
+
+
+        if (col.gameObject.tag == "Brick")
+        {
+            LastTouchedObject = "Brick";
+
+            float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
+
+            // Calculate direction, make length=1 via .normalized
+            Vector2 dir = new Vector2(x, 0.5f).normalized;
+
+            // Set Velocity with dir * speed
+            GetComponent<Rigidbody>().velocity = dir * BrickBounce;
+        }
+
+
+        if (col.gameObject.tag == "NormalWall")
+        {
+            LastTouchedObject = "NormalWall";
+
+            float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
+
+            // Calculate direction, make length=1 via .normalized
+            Vector2 dir = new Vector2(x, 0.5f).normalized;
+
+            // Set Velocity with dir * speed
+            GetComponent<Rigidbody>().velocity = dir * NormalWallBounce;
+        }
+
+
+
+
 
         if (col.gameObject.tag == "Player1")
         {
@@ -75,6 +138,8 @@ public class BallMovement : MonoBehaviour {
             // Set Velocity with dir * speed
             GetComponent<Rigidbody>().velocity = dir * PlayerPadBounce;
         }
+
+
 
 
 

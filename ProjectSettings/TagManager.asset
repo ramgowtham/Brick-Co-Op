@@ -4,10 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - wall
   - ball
   - Player1
   - Player2
+  - BouncePad
+  - NormalWall
+  - Brick
   layers:
   - Default
   - TransparentFX
