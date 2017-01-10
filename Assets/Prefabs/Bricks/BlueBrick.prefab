@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 65724305408937480}
   - component: {fileID: 23129966967492602}
   - component: {fileID: 114978412841459376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BlueBrick
-  m_TagString: Brick
+  m_TagString: BlueBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

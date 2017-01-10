@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 65659920720089252}
   - component: {fileID: 23734800141307762}
   - component: {fileID: 114083687212131822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OrangeSphere
-  m_TagString: Brick
+  m_TagString: OrangeSphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

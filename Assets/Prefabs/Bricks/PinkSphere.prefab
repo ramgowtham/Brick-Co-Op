@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 65109470576379654}
   - component: {fileID: 23676177081213268}
   - component: {fileID: 114786544418192562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PinkSphere
-  m_TagString: Brick
+  m_TagString: VioletSphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

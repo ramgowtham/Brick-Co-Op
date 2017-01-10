@@ -110,11 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1997d5a5ea4816541ab344b0a018ce38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPadBounce: 65
-  BouncePadBounce: 90
-  BrickBounce: 20
+  PlayerPadBounce: 100
+  BouncePadBounce: 130
+  BrickBounce: 40
   NormalWallBounce: 0
-  MaxSpeed: 50
+  MaxSpeed: 70
   hitParticle: {fileID: 198737269411889816, guid: 404e1c3d7dcc7dd49be6eb59619f6d0c,
     type: 2}
 --- !u!135 &135000013299285664

@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 65909013105859884}
   - component: {fileID: 23100159804975462}
   - component: {fileID: 114514512194688214}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: YellowSphere
-  m_TagString: Brick
+  m_TagString: YellowSphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

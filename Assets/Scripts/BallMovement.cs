@@ -4,8 +4,7 @@ using System.Collections;
 public class BallMovement : MonoBehaviour {
     Rigidbody rb;
 
-    public static string LastTouchedObject;
-    
+   
     public float PlayerPadBounce;
     public float BouncePadBounce;
     public float BrickBounce;
@@ -74,14 +73,14 @@ public class BallMovement : MonoBehaviour {
         hitParticle.GetComponent<Renderer>().material = col.gameObject.GetComponent<Renderer>().material;
         Instantiate(hitParticle, transform.position, Quaternion.identity);
 
-        Debug.Log(LastTouchedObject);
+  
 
 
 
 
-        if (col.gameObject.tag == "BouncePad")
+        if (col.gameObject.layer == 8)
         {
-            LastTouchedObject = "BouncePad";
+         
 
             float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
 
@@ -95,9 +94,9 @@ public class BallMovement : MonoBehaviour {
 
 
 
-        if (col.gameObject.tag == "Brick")
+        if (col.gameObject.layer == 9)
         {
-            LastTouchedObject = "Brick";
+        
 
             float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
 
@@ -109,9 +108,9 @@ public class BallMovement : MonoBehaviour {
         }
 
 
-        if (col.gameObject.tag == "NormalWall")
+        if (col.gameObject.layer == 11)
         {
-            LastTouchedObject = "NormalWall";
+            
 
             float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
 
@@ -126,9 +125,9 @@ public class BallMovement : MonoBehaviour {
 
 
 
-        if (col.gameObject.tag == "Player1")
+        if (col.gameObject.layer == 10)
         {
-            LastTouchedObject = "Player1";
+           
       
             float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
 
@@ -139,23 +138,6 @@ public class BallMovement : MonoBehaviour {
             GetComponent<Rigidbody>().velocity = dir * PlayerPadBounce;
         }
 
-
-
-
-
-     
-        if (col.gameObject.tag == "Player2")
-        {
-            LastTouchedObject = "Player2";
-            // Calculate hit Factor
-            float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
-
-            // Calculate direction, make length=1 via .normalized
-            Vector2 dir = new Vector2(x, 0.5f).normalized;
-
-            // Set Velocity with dir * speed
-            GetComponent<Rigidbody>().velocity = dir * PlayerPadBounce;
-        }
     }
 
 

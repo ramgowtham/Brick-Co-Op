@@ -1,0 +1,138 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Xml;
+using System.IO;
+using System.Text;
+using System.Collections.Generic;
+
+public class CreateXML : MonoBehaviour {
+	bool temp=true;
+
+	public List<GameObject> lvlobj;
+
+	public bool clicked=true;
+
+    public int LevelNum;
+
+	// Use this for initialization
+	void Start () {
+	
+		lvlobj = new List<GameObject> ();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+
+
+
+		if (Input.GetKeyDown(KeyCode.E) && clicked == true) 
+		{
+
+			XMLWrite ();
+			clicked = false;
+
+		}
+
+	}
+
+	void XMLWrite()
+	{
+		FileStream file= new FileStream("Assets/XML/Level"+LevelNum+".xml", FileMode.Create);
+		XmlTextWriter writer= new XmlTextWriter(file,Encoding.UTF8);
+
+		GameObject[] BrickObjs = GameObject.FindGameObjectsWithTag ("BlueBox");
+		foreach (GameObject obj in BrickObjs) 
+		{
+			lvlobj.Add (obj);
+            
+		}
+
+        GameObject[] BrickObjs2 = GameObject.FindGameObjectsWithTag("BlueSphere");
+        foreach (GameObject obj in BrickObjs2)
+        {
+            lvlobj.Add(obj);
+
+        }
+        GameObject[] BrickObjs3 = GameObject.FindGameObjectsWithTag("OrangeBox");
+        foreach (GameObject obj in BrickObjs3)
+        {
+            lvlobj.Add(obj);
+
+        }
+        GameObject[] BrickObjs4 = GameObject.FindGameObjectsWithTag("OrangeSphere");
+        foreach (GameObject obj in BrickObjs4)
+        {
+            lvlobj.Add(obj);
+
+        }
+        GameObject[] BrickObjs5 = GameObject.FindGameObjectsWithTag("VioletBox");
+        foreach (GameObject obj in BrickObjs5)
+        {
+            lvlobj.Add(obj);
+
+        }
+        GameObject[] BrickObjs6 = GameObject.FindGameObjectsWithTag("VioletSphere");
+        foreach (GameObject obj in BrickObjs6)
+        {
+            lvlobj.Add(obj);
+
+        }
+        GameObject[] BrickObjs7 = GameObject.FindGameObjectsWithTag("YellowBox");
+        foreach (GameObject obj in BrickObjs7)
+        {
+            lvlobj.Add(obj);
+
+        }
+        GameObject[] BrickObjs8 = GameObject.FindGameObjectsWithTag("YellowSphere");
+        foreach (GameObject obj in BrickObjs8)
+        {
+            lvlobj.Add(obj);
+
+        }
+
+
+
+
+        writer.WriteStartDocument ();
+        writer.WriteStartElement("Level");
+        writer.WriteStartElement ("ObjectList");
+
+
+
+
+		for (int i = 0; i < lvlobj.Count; i++)
+		{
+		writer.WriteStartElement("levelObject");
+
+			writer.WriteAttributeString("name", lvlobj[i].name + "");
+			writer.WriteAttributeString("tag", lvlobj[i].tag + "");
+
+			writer.WriteAttributeString("posX", lvlobj[i].transform.position.x + "");
+			writer.WriteAttributeString("posY", lvlobj[i].transform.position.y + "");
+			writer.WriteAttributeString("posZ", lvlobj[i].transform.position.z + "");
+
+			writer.WriteAttributeString("rotX", lvlobj[i].transform.rotation.eulerAngles.x + "");
+			writer.WriteAttributeString("rotY", lvlobj[i].transform.rotation.eulerAngles.y + "");
+			writer.WriteAttributeString("rotZ", lvlobj[i].transform.rotation.eulerAngles.z + "");
+	
+		writer.WriteEndElement();
+		}	
+
+
+
+
+        writer.WriteEndElement ();
+        writer.WriteEndDocument ();
+		writer.Flush ();
+		file.Close ();
+
+		Debug.Log ("XML Created");
+
+
+
+
+	}
+
+
+}

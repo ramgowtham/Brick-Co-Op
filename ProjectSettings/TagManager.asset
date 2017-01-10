@@ -10,6 +10,14 @@ TagManager:
   - BouncePad
   - NormalWall
   - Brick
+  - BlueSphere
+  - BlueBox
+  - VioletSphere
+  - OrangeBox
+  - OrangeSphere
+  - YellowBox
+  - YellowSphere
+  - VioletBox
   layers:
   - Default
   - TransparentFX
@@ -19,10 +27,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - BouncePad
+  - Brick
+  - Player
+  - Wall
   - 
   - 
   - 
