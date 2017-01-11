@@ -11,8 +11,14 @@ public class LevelObjects : MonoBehaviour {
 	public float rotY;
 	public float rotZ;
 
+    public float scaleX;
+    public float scaleY;
+    public float sclaeZ;
+
 	public string name;
 	public string tag;
+
+    public Material material;
 
 
 

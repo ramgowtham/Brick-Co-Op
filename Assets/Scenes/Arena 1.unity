@@ -2185,7 +2185,7 @@ Light:
   serializedVersion: 7
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 8
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -5045,16 +5045,8 @@ MonoBehaviour:
   xmlFile: {fileID: 4900000, guid: d5a0c690ee6a71b4e8b47e971cf69734, type: 3}
   LevelObjectList: []
   BlueBox: {fileID: 1697460475090544, guid: 856deb7438caa6741ab9f7f7c7d5ea59, type: 2}
-  BlueSphere: {fileID: 1669131111250002, guid: 170276e11ca3d304ca9c5191412e0e03, type: 2}
-  OrangeBox: {fileID: 1722513224213448, guid: 77e33861a9a869e498e86daa3ff9088d, type: 2}
-  OrangeSphere: {fileID: 1151980644522638, guid: 1ef7140902495604dbe0c225a7c943e6,
-    type: 2}
-  VioletBox: {fileID: 1662033846911582, guid: 99b112f3f0437c54eb8784be71f7d995, type: 2}
-  VioletSphere: {fileID: 1466065203263348, guid: 8817e77d3f1fd3b4dae0bc3088845906,
-    type: 2}
-  YellowBox: {fileID: 1407616619753226, guid: e3f5f5def6e9cb347ba72e4643567918, type: 2}
-  YellowSphere: {fileID: 1399124572242352, guid: 901ecde37e03d934daf22d40eca062f7,
-    type: 2}
+  BlueMaterial: {fileID: 0}
+  materialName: 
 --- !u!81 &1617700579
 AudioListener:
   m_ObjectHideFlags: 0

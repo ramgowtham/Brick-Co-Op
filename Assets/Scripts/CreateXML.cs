@@ -41,55 +41,14 @@ public class CreateXML : MonoBehaviour {
 		FileStream file= new FileStream("Assets/XML/Level"+LevelNum+".xml", FileMode.Create);
 		XmlTextWriter writer= new XmlTextWriter(file,Encoding.UTF8);
 
-		GameObject[] BrickObjs = GameObject.FindGameObjectsWithTag ("BlueBox");
+		GameObject[] BrickObjs = GameObject.FindGameObjectsWithTag ("Brick");
 		foreach (GameObject obj in BrickObjs) 
 		{
 			lvlobj.Add (obj);
             
 		}
 
-        GameObject[] BrickObjs2 = GameObject.FindGameObjectsWithTag("BlueSphere");
-        foreach (GameObject obj in BrickObjs2)
-        {
-            lvlobj.Add(obj);
-
-        }
-        GameObject[] BrickObjs3 = GameObject.FindGameObjectsWithTag("OrangeBox");
-        foreach (GameObject obj in BrickObjs3)
-        {
-            lvlobj.Add(obj);
-
-        }
-        GameObject[] BrickObjs4 = GameObject.FindGameObjectsWithTag("OrangeSphere");
-        foreach (GameObject obj in BrickObjs4)
-        {
-            lvlobj.Add(obj);
-
-        }
-        GameObject[] BrickObjs5 = GameObject.FindGameObjectsWithTag("VioletBox");
-        foreach (GameObject obj in BrickObjs5)
-        {
-            lvlobj.Add(obj);
-
-        }
-        GameObject[] BrickObjs6 = GameObject.FindGameObjectsWithTag("VioletSphere");
-        foreach (GameObject obj in BrickObjs6)
-        {
-            lvlobj.Add(obj);
-
-        }
-        GameObject[] BrickObjs7 = GameObject.FindGameObjectsWithTag("YellowBox");
-        foreach (GameObject obj in BrickObjs7)
-        {
-            lvlobj.Add(obj);
-
-        }
-        GameObject[] BrickObjs8 = GameObject.FindGameObjectsWithTag("YellowSphere");
-        foreach (GameObject obj in BrickObjs8)
-        {
-            lvlobj.Add(obj);
-
-        }
+     
 
 
 
@@ -115,8 +74,14 @@ public class CreateXML : MonoBehaviour {
 			writer.WriteAttributeString("rotX", lvlobj[i].transform.rotation.eulerAngles.x + "");
 			writer.WriteAttributeString("rotY", lvlobj[i].transform.rotation.eulerAngles.y + "");
 			writer.WriteAttributeString("rotZ", lvlobj[i].transform.rotation.eulerAngles.z + "");
-	
-		writer.WriteEndElement();
+
+            writer.WriteAttributeString("scaleX", lvlobj[i].transform.localScale.x + "");
+            writer.WriteAttributeString("scaleY", lvlobj[i].transform.localScale.y + "");
+            writer.WriteAttributeString("scaleZ", lvlobj[i].transform.localScale.z + "");
+
+            writer.WriteAttributeString("Material", lvlobj[i].GetComponent<Renderer>().material.name);
+            
+            writer.WriteEndElement();
 		}	
 
 
