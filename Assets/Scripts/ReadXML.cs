@@ -8,7 +8,8 @@ using System.Collections.Generic;
 
 public class ReadXML : MonoBehaviour {
 
-	public TextAsset xmlFile;
+    public TextAsset[] xmlFiles;
+    public TextAsset xmlFile;
 
 	public List<LevelObjects> LevelObjectList;
 
@@ -23,21 +24,37 @@ public class ReadXML : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+      //  xmlFiles = new TextAsset[1];
 		
 		LevelObjectList=new List<LevelObjects>();
-		ReadXMLData ();
+       
+        ReadXMLData ();
 		DrawLevel ();
 
 
 	}
 
+
+  
+
+
+
 	void ReadXMLData()
 	{
-		XmlDocument xmlDoc = new XmlDocument ();
-		xmlDoc.LoadXml (xmlFile.text);
+        Debug.Log(LevelSelectionButtonClick.SelectedLevelNumber);
+
+        if (LevelSelectionButtonClick.SelectedLevelNumber==1)
+        {
+            xmlFile = xmlFiles[0];
+        }
+
+      //  TextAsset xmlFile = (TextAsset)Resources.Load("Assets/XML/Level1.xml");
+
+        XmlDocument xmlDoc = new XmlDocument ();
+        xmlDoc.LoadXml (xmlFile.text);
 
 
-		XmlNodeList nodeList = xmlDoc.GetElementsByTagName("ObjectList");		
+        XmlNodeList nodeList = xmlDoc.GetElementsByTagName("ObjectList");		
 		foreach (XmlNode title in nodeList) 
 		{
 			XmlNodeList ChildLvlObjList = title.ChildNodes;

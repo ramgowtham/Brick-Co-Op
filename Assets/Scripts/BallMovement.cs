@@ -71,9 +71,9 @@ public class BallMovement : MonoBehaviour {
 
 
         hitParticle.GetComponent<Renderer>().material = col.gameObject.GetComponent<Renderer>().material;
-        Instantiate(hitParticle, transform.position, Quaternion.identity);
+        Instantiate(hitParticle, transform.position, Quaternion.identity) ;
 
-  
+        
 
 
 

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4606439312823200}
   - component: {fileID: 198737269411889816}
   - component: {fileID: 199531275995412084}
+  - component: {fileID: 114006309960738558}
   m_Layer: 0
   m_Name: HitParticle
   m_TagString: Untagged
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -270, y: 0, z: 0}
+--- !u!114 &114006309960738558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551747582930944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9c20376f5235d408b0b26e0870a155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198737269411889816
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -48,7 +60,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551747582930944}
   serializedVersion: 5
-  lengthInSec: 0.1
+  lengthInSec: 0.2
   speed: 1
   looping: 0
   prewarm: 0
