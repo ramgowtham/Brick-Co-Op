@@ -35,17 +35,16 @@ public class ReadXML : MonoBehaviour {
 	}
 
 
-  
-
-
-
 	void ReadXMLData()
 	{
         Debug.Log(LevelSelectionButtonClick.SelectedLevelNumber);
-
-        if (LevelSelectionButtonClick.SelectedLevelNumber==1)
+        for (int i = 0; i < 30; i++)
         {
-            xmlFile = xmlFiles[0];
+            if (LevelSelectionButtonClick.SelectedLevelNumber == i)
+            {
+                xmlFile = xmlFiles[i-1];
+                break;
+            }
         }
 
       //  TextAsset xmlFile = (TextAsset)Resources.Load("Assets/XML/Level1.xml");
@@ -99,13 +98,6 @@ public class ReadXML : MonoBehaviour {
                           //  Material yourMaterial = (Material)Resources.Load(materialName, typeof(Material));
                           //  BlueBox.GetComponent<Renderer>().sharedMaterial = yourMaterial;
                             break;
-
-                
-
-
-
-
-
             }
 	}
 

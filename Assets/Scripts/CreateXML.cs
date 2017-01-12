@@ -5,36 +5,36 @@ using System.IO;
 using System.Text;
 using System.Collections.Generic;
 
+using UnityEngine.UI;
+
+
 public class CreateXML : MonoBehaviour {
 	bool temp=true;
 
 	public List<GameObject> lvlobj;
 
-	public bool clicked=true;
+    public Text lvlNumInputField;
+
+	
 
     public int LevelNum;
 
 	// Use this for initialization
 	void Start () {
-	
-		lvlobj = new List<GameObject> ();
+
+        lvlNumInputField.text = "" + LevelNum;
+
+        lvlobj = new List<GameObject> ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
 	
 
+    public void OnClick()
+    {
+        XMLWrite();
+    }
 
-
-		if (Input.GetKeyDown(KeyCode.E) && clicked == true) 
-		{
-
-			XMLWrite ();
-			clicked = false;
-
-		}
-
-	}
 
 	void XMLWrite()
 	{
