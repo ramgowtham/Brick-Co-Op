@@ -20,6 +20,10 @@ public class LevelObjects : MonoBehaviour {
 
     public Material material;
 
+    public bool RotateX;
+    public bool RotateY;
+    public bool RotateZ;
+
 
 
 
