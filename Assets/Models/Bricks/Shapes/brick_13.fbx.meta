@@ -1,16 +1,20 @@
 fileFormatVersion: 2
-guid: 663630522bfb3e34da9c0f171a6fb963
-timeCreated: 1484195067
+guid: 050f7c147ae1c8b4ab2ad3ec51f167ad
+timeCreated: 1485509234
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCube2
     400000: //RootNode
+    400002: pCube2
     2300000: //RootNode
+    2300002: pCube2
     3300000: //RootNode
+    3300002: pCube2
     4300000: pCube2
-    6400000: //RootNode
+    6400000: pCube2
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -71,7 +75,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

@@ -1,16 +1,20 @@
 fileFormatVersion: 2
-guid: b994bf7f8764a23458e166463d0cce37
-timeCreated: 1484109744
+guid: 669e55c0c6b12c148940b533f7b264c0
+timeCreated: 1485509234
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: brick_65:pCube1
     400000: //RootNode
+    400002: brick_65:pCube1
     2300000: //RootNode
+    2300002: brick_65:pCube1
     3300000: //RootNode
+    3300002: brick_65:pCube1
     4300000: brick_65:pCube1
-    6400000: //RootNode
+    6400000: brick_65:pCube1
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -71,7 +75,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

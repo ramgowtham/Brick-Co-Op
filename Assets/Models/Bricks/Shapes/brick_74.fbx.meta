@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5c613df504e8c0541adb1ce3fa50ff24
-timeCreated: 1484195067
+guid: d2767a3e95fae9c4abd6b7707bb11c40
+timeCreated: 1485509235
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -81,7 +81,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

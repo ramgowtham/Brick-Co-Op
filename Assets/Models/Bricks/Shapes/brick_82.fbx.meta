@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: 4a29103555c0e614292e5913eaef146d
-timeCreated: 1484195067
+guid: 892467e2e4c5a8c4cb013dbc555e91e0
+timeCreated: 1485509234
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
     100002: polySurface7
+    100004: polySurface1
     400000: //RootNode
     400002: polySurface7
+    400004: polySurface1
     2300000: polySurface7
     3300000: polySurface7
     4300000: polySurface7
@@ -73,7 +75,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

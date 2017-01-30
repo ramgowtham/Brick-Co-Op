@@ -20,20 +20,20 @@ public class CreateXML : MonoBehaviour {
     public int LevelNum;
 
 	// Use this for initialization
-	void Start () {
+	public void OnClick () {
 
-        lvlNumInputField.text = "" + LevelNum;
+        // lvlNumInputField.text = "" + LevelNum;
+
+        LevelNum = int.Parse(lvlNumInputField.text);
 
         lvlobj = new List<GameObject> ();
-	}
+        XMLWrite();
+    }
 	
 	// Update is called once per frame
 	
 
-    public void OnClick()
-    {
-        XMLWrite();
-    }
+  
 
 
 	void XMLWrite()
@@ -45,6 +45,7 @@ public class CreateXML : MonoBehaviour {
 		foreach (GameObject obj in BrickObjs) 
 		{
 			lvlobj.Add (obj);
+            
             
 		}
 
@@ -62,7 +63,12 @@ public class CreateXML : MonoBehaviour {
 
 		for (int i = 0; i < lvlobj.Count; i++)
 		{
-		writer.WriteStartElement("levelObject");
+            
+
+           
+
+
+            writer.WriteStartElement("levelObject");
 
 			writer.WriteAttributeString("name", lvlobj[i].name + "");
 			writer.WriteAttributeString("tag", lvlobj[i].tag + "");
@@ -80,7 +86,41 @@ public class CreateXML : MonoBehaviour {
             writer.WriteAttributeString("scaleZ", lvlobj[i].transform.localScale.z + "");
 
             writer.WriteAttributeString("Material", lvlobj[i].GetComponent<Renderer>().material.name);
-            
+
+
+            if (lvlobj[i].gameObject.GetComponent<RotateXaxis>().enabled == true)
+            {
+                writer.WriteAttributeString("RotateX", "Y");
+            }
+            else
+                if (lvlobj[i].gameObject.GetComponent<RotateXaxis>().enabled == false)
+            {
+                writer.WriteAttributeString("RotateX", "N");
+            }
+
+
+
+            if (lvlobj[i].gameObject.GetComponent<RotateYaxis>().enabled == true)
+            {
+                writer.WriteAttributeString("RotateY", "Y");
+            }
+            else
+                if (lvlobj[i].gameObject.GetComponent<RotateYaxis>().enabled == false)
+            {
+                writer.WriteAttributeString("RotateY", "N");
+            }
+
+
+            if (lvlobj[i].gameObject.GetComponent<RotateZaxis>().enabled == true)
+            {
+                writer.WriteAttributeString("RotateZ", "Y");
+            }
+            else
+                if (lvlobj[i].gameObject.GetComponent<RotateZaxis>().enabled == false)
+            {
+                writer.WriteAttributeString("RotateZ", "N");
+            }
+
             writer.WriteEndElement();
 		}	
 
